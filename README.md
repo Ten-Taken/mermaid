@@ -1,6 +1,10 @@
 # mermaid
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the front-end SPA powering The Mermaid Bar Destin.
+
+## Application
+
+## Scaffolding Boilerplate
 
 ## Recommended IDE Setup
 
