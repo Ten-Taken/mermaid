@@ -1,11 +1,14 @@
 <template>
-  <section class="rounded-[2rem] border border-white/10 bg-white/6 p-8 shadow-xl shadow-black/20 backdrop-blur">
-    <p class="text-sm font-medium uppercase tracking-[0.3em] text-emerald-200/60">About</p>
-    <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white">Project foundation</h2>
-    <p class="mt-4 max-w-3xl text-base leading-7 text-emerald-50/75">
-      This project was scaffolded with Cloudflare&apos;s CLI and now uses Tailwind for styling plus
-      Heroicons for interface iconography. From here, we can shape the actual application
-      structure without fighting the default starter presentation.
-    </p>
-  </section>
+  <v-card border color="surface" rounded="xl">
+    <v-card-item>
+      <v-card-subtitle>About</v-card-subtitle>
+      <v-card-title>Project foundation</v-card-title>
+    </v-card-item>
+
+    <v-card-text class="text-body-1">
+      This project was scaffolded with Cloudflare&apos;s CLI and is now set up to use Vuetify as
+      the primary UI framework. That gives us a stronger base for app layout, theming, and
+      component-driven development as we move past starter content.
+    </v-card-text>
+  </v-card>
 </template>
