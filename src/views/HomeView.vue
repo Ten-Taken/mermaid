@@ -1,50 +1,110 @@
+<script setup>
+const navItems = [
+  { title: 'Book Services', to: '/booking', icon: 'mdi-home-outline' },
+  { title: 'Shop Jewelry & Hair Charms', to: '/shop', icon: 'mdi-information-outline' },
+  { title: `Today's Location`, to: '/location', icon: 'mdi-home-outline' },
+  { title: 'Contact Us', to: '/contact', icon: 'mdi-home-outline' },
+]
+
+const items = [
+  'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+  'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+  'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+  'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+]
+</script>
+
 <template>
-  <v-row>
-    <v-col cols="12" md="8">
-      <v-card
-        border
-        color="surface"
-        rounded="xl"
-        subtitle="Starter status"
-        title="Vuetify is now the UI foundation"
-      >
-        <v-card-text class="text-body-1">
-          This starter shell replaces the earlier Tailwind experiment and gives us a clean Vuetify
-          base for layout, forms, navigation, and theming as the app grows.
-        </v-card-text>
-
-        <v-card-text class="pt-0">
-          <v-chip-group column>
-            <v-chip color="primary" variant="tonal">Vue 3</v-chip>
-            <v-chip color="primary" variant="tonal">Vue Router</v-chip>
-            <v-chip color="primary" variant="tonal">Pinia</v-chip>
-            <v-chip color="primary" variant="tonal">Vuetify</v-chip>
-            <v-chip color="primary" variant="tonal">MDI Icons</v-chip>
-          </v-chip-group>
-        </v-card-text>
-      </v-card>
-    </v-col>
-
-    <v-col cols="12" md="4">
-      <v-card border color="surface" rounded="xl" title="Next good moves">
-        <v-list lines="two">
-          <v-list-item
-            prepend-icon="mdi-palette-outline"
-            title="Define the product theme"
-            subtitle="Settle colors, density, typography, and component defaults."
-          />
-          <v-list-item
-            prepend-icon="mdi-view-dashboard-outline"
-            title="Build real route content"
-            subtitle="Replace placeholders with the first useful screens and flows."
-          />
-          <v-list-item
-            prepend-icon="mdi-package-variant-closed-plus"
-            title="Extract shared UI pieces"
-            subtitle="Create reusable cards, toolbars, dialogs, and form patterns."
-          />
-        </v-list>
-      </v-card>
-    </v-col>
-  </v-row>
+  <div>
+    <v-row>
+      <v-col cols="12" md="8">
+        <v-card border color="surface" rounded="xl">
+          <v-card-text class="text-body-1">
+            Hair Wraps, Tinsel, Yarn Braids & Jewelry. I can come to you, (fees may apply) or visit
+            me at today's location. Contact me for details.
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="4">
+        <v-card border color="surface" rounded="xl">
+          <v-row class="flex-column ga-2">
+            <v-btn
+              v-for="item in navItems"
+              :key="item.to"
+              :prepend-icon="item.icon"
+              :to="item.to"
+              rounded="pill"
+              variant="text"
+              justify="start"
+            >
+              {{ item.title }}
+            </v-btn>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-container>
+        <v-carousel
+          height="200"
+          cycle
+          interval="3000"
+          direction="vertical"
+          vertical-arrows="left"
+          vertical-delimiters="right"
+        >
+          <v-carousel-item
+            v-for="(src, i) in items"
+            :key="i"
+            :src="src"
+            reverse-transition="cross-scale"
+            transition="cross-scale"
+            cover
+          ></v-carousel-item>
+        </v-carousel>
+      </v-container>
+    </v-row>
+    <v-row>
+      <v-button color="primary" variant="tonal" rounded="pill"> Book Now </v-button>
+    </v-row>
+  </div>
 </template>
+
+<style scoped>
+.cross-scale-enter-active,
+.cross-scale-leave-active {
+  transition: 0.5s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition-property: opacity, transform;
+}
+
+.cross-scale-leave-from,
+.cross-scale-leave-to {
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+}
+
+.cross-scale-enter-from,
+.cross-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cross-scale-enter-from,
+  .cross-scale-leave-to {
+    transform: none;
+  }
+}
+
+.reduced-motion-info {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reduced-motion-info {
+    display: block;
+  }
+}
+</style>
