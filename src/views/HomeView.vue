@@ -17,18 +17,35 @@ const items = [
 <template>
   <div>
     <v-row>
-      <v-col cols="12" md="8">
-        <v-card border color="surface" rounded="xl">
+      <v-col cols="6">
+        <v-card
+          border
+          color="background"
+          rounded="xl"
+        >
           <v-card-text class="text-body-1">
             Hair Wraps, Tinsel, Yarn Braids & Jewelry. I can come to you, (fees may apply) or visit
             me at today's location. Contact me for details.
           </v-card-text>
         </v-card>
       </v-col>
+      <v-col cols="6">
+        <v-img
+          :width="300"
+          aspect-ratio="16/9"
+          cover
+          src="@/assets/mermaid3.png"
+        ></v-img>
+      </v-col>
     </v-row>
+
     <v-row>
-      <v-col cols="12" md="4">
-        <v-card border color="surface" rounded="xl">
+      <v-col cols="12">
+        <v-card
+          border
+          color="surface"
+          rounded="xl"
+        >
           <v-row class="flex-column ga-2">
             <v-btn
               v-for="item in navItems"
@@ -67,7 +84,13 @@ const items = [
       </v-container>
     </v-row>
     <v-row>
-      <v-button color="primary" variant="tonal" rounded="pill"> Book Now </v-button>
+      <v-button
+        color="primary"
+        variant="tonal"
+        rounded="pill"
+      >
+        Book Now
+      </v-button>
     </v-row>
   </div>
 </template>

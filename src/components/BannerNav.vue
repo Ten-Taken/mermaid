@@ -14,29 +14,42 @@
       ></v-img>
     </template>
 
-    <template #prepend>
-      <img
-        alt="Vue logo"
-        src="@/assets/shell3.png"
-        width="24"
-        height="24"
-      />
-    </template>
+    <v-spacer />
 
-    <v-app-bar-title class="font-weight-semibold"> The Mermaid Bar </v-app-bar-title>
+    <v-row class="align-self-center justify-center">
+      <v-col cols="2">
+        <img
+          alt="Seashell logo 1"
+          src="@/assets/shell3.png"
+          width="74"
+          height="74"
+        />
+      </v-col>
+      <v-col
+        class="d-flex align-center"
+        cols="auto"
+      >
+        <v-app-bar-title class="banner-title"> The Mermaid Bar </v-app-bar-title>
+      </v-col>
+      <v-col cols="1">
+        <img
+          alt="Whale logo 2"
+          src="@/assets/whale4.png"
+          width="74"
+          height="74"
+        />
+      </v-col>
+    </v-row>
 
-    <!-- <v-spacer /> -->
-
-    <!-- <v-btn
-      v-for="item in navItems"
-      :key="item.to"
-      :prepend-icon="item.icon"
-      :to="item.to"
-      class="ml-2"
-      rounded="pill"
-      variant="text"
-    >
-      {{ item.title }}
-    </v-btn> -->
+    <v-spacer />
   </v-app-bar>
 </template>
+
+<style scoped>
+.banner-title {
+  font-family: 'Trotes', serif;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  color: blue;
+  line-height: 1;
+}
+</style>
