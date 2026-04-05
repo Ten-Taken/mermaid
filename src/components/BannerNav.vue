@@ -47,9 +47,9 @@
 
 <style scoped>
 .banner-title {
-  font-family: 'Trotes', serif;
+  font-family: 'Tales', serif;
   font-size: clamp(2rem, 4vw, 3.15rem);
-  color: blue;
+  color: rgb(23, 23, 166);
   line-height: 1;
 }
 </style>

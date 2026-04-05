@@ -41,25 +41,19 @@ const items = [
 
     <v-row>
       <v-col cols="12">
-        <v-card
-          border
-          color="surface"
-          rounded="xl"
-        >
-          <v-row class="flex-column ga-2">
-            <v-btn
-              v-for="item in navItems"
-              :key="item.to"
-              :prepend-icon="item.icon"
-              :to="item.to"
-              rounded="pill"
-              variant="text"
-              justify="start"
-            >
-              {{ item.title }}
-            </v-btn>
-          </v-row>
-        </v-card>
+        <v-row class="flex-column ga-2">
+          <v-btn
+            v-for="item in navItems"
+            :key="item.to"
+            :prepend-icon="item.icon"
+            :to="item.to"
+            rounded="pill"
+            variant="text"
+            justify="start"
+          >
+            {{ item.title }}
+          </v-btn>
+        </v-row>
       </v-col>
     </v-row>
     <v-row>

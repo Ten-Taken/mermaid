@@ -48,8 +48,16 @@ html {
 }
 
 @font-face {
-  font-family: 'Blacher';
-  src: url('@/assets/fonts/BlacherRegular-PVWvx.otf') format('truetype');
+  font-family: 'SandyStarfish';
+  src: url('@/assets/fonts/SandyToesStarFish-k74KZ.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SandyPalms';
+  src: url('@/assets/fonts/SandyToesPalm-ALnY2.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
