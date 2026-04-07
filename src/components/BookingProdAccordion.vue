@@ -1,5 +1,34 @@
 <script setup>
-const tempState = ''
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  flashText: {
+    type: String,
+    required: true,
+  },
+  expandedTitle: {
+    type: String,
+    required: true,
+  },
+  expandedSubtitle: {
+    type: String,
+    required: true,
+  },
+  icon: {
+    type: String,
+    required: true,
+  },
+  cardImage: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <template>
@@ -17,7 +46,7 @@ const tempState = ''
               <v-row density="compact">
                 <v-col cols="2">
                   <img
-                    src="@/assets/booking/hairwraps.svg"
+                    :src="icon"
                     alt=""
                     class="merm-accordion-icon"
                   />
@@ -27,9 +56,9 @@ const tempState = ''
                   class="d-flex align-center justify-start"
                   cols="4"
                 >
-                  <span class="accordion-title text-title-medium font-weight-semibold"
-                    >Hair Wraps</span
-                  >
+                  <span class="accordion-title text-title-medium font-weight-semibold">{{
+                    title
+                  }}</span>
                 </v-col>
                 <v-col
                   class="text-teal d-flex align-center"
@@ -40,13 +69,12 @@ const tempState = ''
                       v-if="expanded"
                       key="0"
                     >
-                      Versatile and Stylish!
+                      {{ flashText }}
                     </span>
                     <span
                       v-else
                       key="1"
                     >
-                      {{ tempState }}
                     </span>
                   </v-fade-transition>
                 </v-col>
@@ -60,15 +88,12 @@ const tempState = ''
             >
               <div class="d-flex flex-no-wrap justify-space-between">
                 <div>
-                  <v-card-title class="text-title-medium"> Hair Wraps </v-card-title>
+                  <v-card-title class="text-title-medium"> {{ expandedTitle }} </v-card-title>
 
-                  <v-card-subtitle>Buy three get one free!</v-card-subtitle>
+                  <v-card-subtitle> {{ expandedSubtitle }} </v-card-subtitle>
 
                   <v-card-text>
-                    We wrap your hair like never before! Our hair wraps are designed to keep you
-                    cool and stylish during your beach adventures. Whether you're lounging by the
-                    pool or dancing under the stars, our wraps will add a touch of flair to your
-                    look. Choose from a variety of colors and patterns to match your vibe!
+                    {{ description }}
                   </v-card-text>
                 </div>
 
@@ -77,7 +102,7 @@ const tempState = ''
                   rounded="0"
                   size="125"
                 >
-                  <v-img src="@/assets/booking/hairwrapphoto.jpg"></v-img>
+                  <v-img :src="cardImage"></v-img>
                 </v-avatar>
               </div>
             </v-card>
