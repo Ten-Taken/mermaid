@@ -15,8 +15,21 @@ const vuetify = createVuetify({
   theme: {
     defaultTheme: 'mermaidTheme',
     themes: {
+      mermLocationTheme: {
+        dark: false,
+        colors: {
+          background: '#F2F7F7', //mermPanel
+          surface: '#F2F7F7', //mermPanel -card bg
+          primary: '#004A79', //mermParaText
+          secondary: '#007393', //keep
+          'on-background': '#004A79',
+          'on-surface': '#004A79',
+          'on-primary': '#004A79',
+          'on-secondary': '#007393',
+        },
+      },
       mermaidTheme: {
-        dark: true,
+        dark: false,
         colors: {
           background: '#a1d9e6',
           surface: '#3c5491',
